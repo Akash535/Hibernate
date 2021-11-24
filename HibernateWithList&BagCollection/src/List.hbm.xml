@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+          "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+          "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.bean.Author" table="AuthorInfo">
+		<id name="aid">
+			<generator class="increment"></generator>
+		</id>
+		<property name="aname"></property>
+		<property name="age"></property>
+		<list name="books" table="BookInfo">
+			<key column="auth_id"></key>
+			<index column="bookIndex"></index>
+			<element column="bookName" type="string"></element>
+		</list>
+	</class>
+</hibernate-mapping>
